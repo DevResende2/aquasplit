@@ -1,0 +1,11 @@
+# Ambiente virtual (recriável com: pip install -r requirements.txt)
+.venv/
+
+# Cache que o Python gera ao rodar os scripts
+__pycache__/
+
+# Bancos de dados SQLite (gerados pelos scripts de carga)
+*.db
+
+# Arquivos temporários do Jupyter Notebook
+.ipynb_checkpoints/
