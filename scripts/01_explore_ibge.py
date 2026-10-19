@@ -51,4 +51,5 @@ print("=== mostrar somente duplicatas ===")
 print(filtragem)
 
 # 7. Salvar o resultado em CSV
-# TODO
+df_subset.to_csv('data/raw/publico/ibge_municipios.csv', index=False, encoding='utf-8',)
+print("=== arquivo salvo na pasta data ===")
