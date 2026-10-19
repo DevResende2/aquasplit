@@ -35,15 +35,20 @@ df_subset = df_subset.rename(columns={
 print("=== Subconjunto de colunas ===")
 print(df_subset)
 # 5. Quantos municípios cada estado tem?
-df_agrupado = df_subset.groupby("UF")["municipio"].size()
-df_sorted = df_subset.sort_values(by='codigo_ibge', ascending=False)
-print("=== Quantidade de municípios por estado ===")
+df_agrupado = df_subset.groupby("UF")["municipio"].size().sort_values(ascending=False)
+print("=== Estados ordenados por quantidade de numeros de municipios ===")
 print(df_agrupado)
-print("=== Municípios ordenados por código IBGE ===")
-print(df_sorted)
 
 # 6. Existem municípios com o mesmo nome?
-# TODO
+duplicatas = df_subset[df_subset.duplicated(subset=["municipio"] , keep=False)]
+print("=== nomes duplicados ===")               
+print(duplicatas)
+contagem = duplicatas["municipio"].value_counts()
+print("=== contagem de duplicatas ===")
+print(contagem)
+filtragem = df_subset[df_subset["municipio"] == "Bom Jesus"]
+print("=== mostrar somente duplicatas ===")
+print(filtragem)
 
 # 7. Salvar o resultado em CSV
 # TODO
